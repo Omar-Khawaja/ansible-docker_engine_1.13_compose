@@ -1,0 +1,10 @@
+---
+
+- name: Set up docker repository
+  template: src=docker.repo dest=/etc/yum.repos.d/docker.repo
+
+- name: Install Docker Engine 1.13.0
+  yum: name=docker-engine-1.13.0 state=installed
+
+- name: enable and start Docker Engine 1.13.0
+  service: name=docker state=started enabled=yes

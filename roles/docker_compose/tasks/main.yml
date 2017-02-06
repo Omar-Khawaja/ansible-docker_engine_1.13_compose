@@ -1,0 +1,8 @@
+---
+- name: Install Docker Compose 1.10.0
+  copy: src=docker-compose dest=/usr/bin/docker-compose
+
+# make docker-compose executable
+- file:
+    path: /usr/bin/docker-compose
+    mode: "u+x"
